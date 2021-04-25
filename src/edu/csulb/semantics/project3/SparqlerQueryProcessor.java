@@ -62,7 +62,7 @@ public class SparqlerQueryProcessor {
 		InputStream modelStream = FileManager.get().open(path);
 
 		if (modelStream == null) {
-			throw new RuntimeException("Can't find ontology file at: ");// + file.getCanonicalPath());
+			throw new RuntimeException("Can't find ontology file");
 		}
 		model.read(modelStream, null);
 		try {
