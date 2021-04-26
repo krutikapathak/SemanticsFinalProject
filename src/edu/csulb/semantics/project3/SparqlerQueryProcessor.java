@@ -19,12 +19,16 @@ public class SparqlerQueryProcessor {
 	public static String sparql(String mQueryText, Model model) {
 		ResultSet results = null;
 		String output = "";
+		
+			// Execute query
 		try (QueryExecution queryExecution = QueryExecutionFactory.create(QueryFactory.create(mQueryText), model)) {
 			results = queryExecution.execSelect();
 			List<String> columnNames = results.getResultVars();
 
+			// Prepare output to display in UI
 			output += "<tr>";
 			if (!results.hasNext()) {
+				// Handle empty result set for a query
 				output += "<td>" + "No results found for entered query!" + "</td>";
 				output += "</tr>";
 			} else {
@@ -45,6 +49,7 @@ public class SparqlerQueryProcessor {
 				}
 			}
 		} catch (Exception e) {
+			// Handle invalid query
 			output += "<tr>";
 			output += "<td>" + "Please enter a valid query!" + "</td>";
 			output += "</tr>";
@@ -56,14 +61,17 @@ public class SparqlerQueryProcessor {
 	static Model model;
 
 	public static Model init(String path) {
+		
 		model = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM_RULE_INF);
 		if (path == null)
 			path = "";
+		// Open owl file to read the content for the path entered by user
 		InputStream modelStream = FileManager.get().open(path);
 
 		if (modelStream == null) {
 			throw new RuntimeException("Can't find ontology file");
 		}
+		// Build model for the given owl file
 		model.read(modelStream, null);
 		try {
 			modelStream.close();
