@@ -15,16 +15,14 @@ Steps:
 
 5.	Go to the root directory of tomcat server and make sure bin folder has all read/write permissions.
 6.	To add the missing permission for bin folder, run following commands: 
-a.	Mac:  chmod 777 bin from terminal
-b.	Windows: Right click on the bin folder of Tomcat -> Security ->Give full control to system.
+    a.	Mac:  chmod 777 bin from terminal
+    b.	Windows: Right click on the bin folder of Tomcat -> Security ->Give full control to system.
 7.	Add same permission to the following files if not already given:
-a.	catalina.sh (macOS)
-b.	catalina.bat (windows)
-Mac: chmod 777 catalina.sh 
-Windows: Right click on the Catalina.bat file-> Security ->Check if file has all controls.
+    a.  Mac: chmod 777 catalina.sh 
+    b.  Windows: Right click on the Catalina.bat file-> Security ->Check if file has all controls.
 8.	Go to the bin folder of the server dir in cmd/terminal and run below commands:
-a.	sh startup.sh (macOS)
-b.	startup.bat (windows)
+    a.	sh startup.sh (macOS)
+    b.	startup.bat (windows)
 9.	Once the server starts, open any browser (following was tested on Chrome) and open http:localhost:8080
 10.	Below window will appear 
 ![alt text](https://github.com/krutikapathak/SemanticsFinalProject/blob/master/referenceimages/tomcat_home.png?raw=true)
