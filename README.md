@@ -6,13 +6,13 @@ Steps:
 2.	Download TOMCAT server from  https://tomcat.apache.org/download-10.cgi depending on the OS(Project was run on version 9 and 10)
 3.	Open Tomcat library file for edit mode apache-tomcat-10.0.5/conf/tomcat-users.xml
 4.	Add below roles to the file inside <tomcat-users>      
-    <myxml>      
+      
     <role rolename="manager-gui"/>        
     <role rolename="manager-script"/>        
     <role rolename="manager-jmx"/>         
     <role rolename="manager-status"/> 
     <user username="team4" password="password" roles="manager-gui,manager-script,manager-jmx,manager-status"/>  
-    </myxml>   
+   
 5.	Go to the root directory of tomcat server and make sure bin folder has all read/write permissions.
 6.	To add the missing permission for bin folder, run following commands:   
     a.	Mac:  chmod 777 bin from terminal.   
